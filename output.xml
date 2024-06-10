@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.3 on win32)" generated="2024-05-28T22:55:10.148761" rpa="false" schemaversion="5">
+<suite id="s1" name="Mercado Livre Testes" source="C:\CursoUdemy\RobotFramework\WebTestMercadoLivre\mercado_livre_testes.robot">
+<test id="s1-t1" name="Caso de Teste 03 - Adicionar Produto no Carrinho" line="27">
+<kw name="Abrir o navegador" owner="mercado_livre_resources" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-05-28T22:55:10.289681" level="INFO">Opening browser 'chrome' to base url 'https://www.mercadolivre.com.br/'.</msg>
+<arg>${URL}</arg>
+<arg>browser=chrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-05-28T22:55:10.289681" elapsed="2.944194"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-05-28T22:55:13.233875" elapsed="0.231976"/>
+</kw>
+<status status="PASS" start="2024-05-28T22:55:10.288685" elapsed="3.177166"/>
+</kw>
+<kw name="Acessar a home page do site mercadolivre.com.br" owner="mercado_livre_resources">
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2024-05-28T22:55:13.466848" level="INFO">Opening url 'https://www.mercadolivre.com.br/'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2024-05-28T22:55:13.466848" elapsed="0.664210"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=${MENU_SUPERMERCADO}</arg>
+<arg>timeout=10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-28T22:55:14.131058" elapsed="0.466838"/>
+</kw>
+<status status="PASS" start="2024-05-28T22:55:13.466848" elapsed="1.131048"/>
+</kw>
+<kw name="Digitar o nome de produto &quot;Super Nintendo Snes Original Completo 2 Controles E 1 Jogo&quot; no campo de pesquisa" owner="mercado_livre_resources" source_name="Digitar o nome de produto &quot;${PRODUTO}&quot; no campo de pesquisa">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-05-28T22:55:14.598892" level="INFO">Typing text 'Super Nintendo Snes Original Completo 2 Controles E 1 Jogo' into text field 'cb1-edit'.</msg>
+<arg>locator=cb1-edit</arg>
+<arg>text=${PRODUTO}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-28T22:55:14.598892" elapsed="0.265149"/>
+</kw>
+<status status="PASS" start="2024-05-28T22:55:14.598892" elapsed="0.265149"/>
+</kw>
+<kw name="Clicar no botão de pesquisa" owner="mercado_livre_resources">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-28T22:55:14.865042" level="INFO">Clicking element '//button[@class='nav-search-btn']'.</msg>
+<arg>locator=//button[@class='nav-search-btn']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-28T22:55:14.865042" elapsed="1.692455"/>
+</kw>
+<status status="PASS" start="2024-05-28T22:55:14.864041" elapsed="1.693456"/>
+</kw>
+<kw name="Verificar o resultado da pesquisa se está listando o produto &quot;Super Nintendo Snes Original Completo 2 Controles E 1 Jogo&quot;" owner="mercado_livre_resources" source_name="Verificar o resultado da pesquisa se está listando o produto &quot;${GAME}&quot;">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=//a[@title='${GAME}']</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-28T22:55:16.558495" elapsed="0.110145"/>
+</kw>
+<status status="PASS" start="2024-05-28T22:55:16.557497" elapsed="0.111143"/>
+</kw>
+<kw name="Adicionar o &quot;Super Nintendo Snes Original Completo 2 Controles E 1 Jogo&quot; no carrinho" owner="mercado_livre_resources" source_name="Adicionar o ${PRODUTO} no carrinho">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-28T22:55:16.669638" level="INFO">Clicking element ':R2l5e6:'.</msg>
+<arg>locator=:R2l5e6:</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-28T22:55:16.669638" elapsed="0.770503"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=//button[contains(., 'Adicionar ao carrinho')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-05-28T22:55:17.441137" elapsed="0.073311"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-05-28T22:55:17.514448" level="INFO">Clicking element '//button[contains(., 'Adicionar ao carrinho')]'.</msg>
+<arg>locator=//button[contains(., 'Adicionar ao carrinho')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-05-28T22:55:17.514448" elapsed="1.942065"/>
+</kw>
+<status status="PASS" start="2024-05-28T22:55:16.669638" elapsed="2.786875"/>
+</kw>
+<kw name="Verificar se o produto &quot;Super Nintendo Snes Original Completo 2 Controles E 1 Jogo&quot; foi adicionado com sucesso" owner="mercado_livre_resources" source_name="Verificar se o produto &quot;${PRODUTO}&quot; foi adicionado com sucesso">
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-05-28T22:55:19.457634" level="INFO">Clicking button ':Rj86:'.</msg>
+<msg time="2024-05-28T22:55:19.594191" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-2.png"&gt;&lt;img src="selenium-screenshot-2.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-05-28T22:55:19.594191" level="FAIL">Button with locator ':Rj86:' not found.</msg>
+<arg>locator=:Rj86:</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="FAIL" start="2024-05-28T22:55:19.457634" elapsed="0.138603">Button with locator ':Rj86:' not found.</status>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>locator=button2</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="NOT RUN" start="2024-05-28T22:55:19.596237" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>locator=button2</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-05-28T22:55:19.596237" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2024-05-28T22:55:19.456513" elapsed="0.139724">Button with locator ':Rj86:' not found.</status>
+</kw>
+<kw name="Fechar o navegador" owner="mercado_livre_resources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-05-28T22:55:19.597290" elapsed="2.170109"/>
+</kw>
+<status status="PASS" start="2024-05-28T22:55:19.597290" elapsed="2.171037"/>
+</kw>
+<doc>Esse teste verifica a adição de um produto no carrinho de compras</doc>
+<tag>adicionar_carrinho</tag>
+<status status="FAIL" start="2024-05-28T22:55:10.288685" elapsed="11.480305">Button with locator ':Rj86:' not found.</status>
+</test>
+<doc>Essa suite testa o site da Mercadolivre.com.br</doc>
+<status status="FAIL" start="2024-05-28T22:55:10.149811" elapsed="11.621183"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0">adicionar_carrinho</stat>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Mercado Livre Testes">Mercado Livre Testes</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
